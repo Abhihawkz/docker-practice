@@ -29,7 +29,7 @@ app.get("/",(req,res)=>{
 
 (async function connectDb() {
     try {
-        const res = await mongoose.connect("mongodb://localhost:27017/docker")
+        const res = await mongoose.connect("mongodb://mydb:27017/docker")
         console.log(res.connection.host)
     } catch (error) {
         console.log(error)
