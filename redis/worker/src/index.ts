@@ -14,8 +14,9 @@ async function startWorker() {
     try {
         await client.connect();
         while(1){
-            const payload = await client.brPop('submissions',0);
-            processSubmisstion(payload);
+            const payload = await client.brPop('submissions',0) || " ";
+            //@ts-ignore
+            processSubmisstion(payload.element);
 
 
         }
